@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-class LinkedList {
+class SinglyLinkedList {
   constructor(value) {
     // initial value of the list
     this.head = new Node(value)
@@ -63,6 +63,24 @@ class LinkedList {
     this.length--
   }
 
+  reverse() {
+    if (!this.head.next) {
+      return this.head
+    }
+
+    let first = this.head
+    this.tail = this.head
+    let second = first.next
+    while (second) {
+      const third = second.next
+      second.next = first
+      first = second
+      second = third
+    }
+    this.head.next = null
+    this.head = first
+  }
+
   // Traverse to a specidic index
   // Private function //
   _traverseToIndex(index) {
@@ -75,3 +93,7 @@ class LinkedList {
     return currentNode
   }
 }
+
+const myList = new SinglyLinkedList(1)
+myList.append(2)
+myList.append(3)
