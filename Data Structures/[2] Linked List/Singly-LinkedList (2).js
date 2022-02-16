@@ -124,5 +124,4 @@ class SinglyLinkedList {
 
     return true
   }
-
 }
