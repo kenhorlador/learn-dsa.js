@@ -104,12 +104,10 @@ class SinglyLinkedList {
     }
 
     const newNode = new Node(value)
-
     const previousNode = this.get(index - 1)
-    const leaderNode = previous.next
 
+    newNode.next = previousNode.next
     previousNode.next = newNode
-    newNode.next = leaderNode
     this.length++
 
     return this
@@ -122,4 +120,5 @@ class SinglyLinkedList {
 
     return true
   }
+
 }
