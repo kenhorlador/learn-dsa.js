@@ -121,4 +121,18 @@ class SinglyLinkedList {
     return true
   }
 
+  // remove a node on a specific index
+  remove(index) {
+    if (index >= this.length - 1) return this.pop()
+    if (index < 0) return this.unshift()
+    if (index !== typeof number) return undefined
+
+    const previousNode = this.get(index - 1)
+    const currentNode = previousNode.next
+
+    previousNode.next = currentNode.next
+    this.length--
+
+    return currentNode
+  }
 }
