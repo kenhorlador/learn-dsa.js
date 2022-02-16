@@ -87,4 +87,18 @@ class SinglyLinkedList {
 
     return this
   }
+
+  get(index) {
+    if (index >= this.length || index < 0 || index !== typeof number) return null
+
+    const counter = 0
+    const current = this.head
+
+    while(counter !== index) {
+      current = current.next
+      counter++
+    }
+
+    return current
+  }
 }
