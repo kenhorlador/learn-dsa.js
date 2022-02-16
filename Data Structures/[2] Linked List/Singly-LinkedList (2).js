@@ -116,9 +116,7 @@ class SinglyLinkedList {
   }
 
   // change the value of the node
-  set(index, value) {
-    if (index >= this.length || index < 0 || index !== typeof number) return false
-
+  set(index, value){
     const currentNode = this.get(index)
     currentNode.value = value
 
