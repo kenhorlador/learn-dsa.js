@@ -13,7 +13,7 @@ class SinglyLinkedList {
   }
 
   // push a value at the tail of the linked list
-  append(value) {
+  push(value) {
     const newNode = new Node(value)
     if (!this.head) {
       this.head = newNode
@@ -22,17 +22,6 @@ class SinglyLinkedList {
       this.tail.next = newNode
       this.tail = newNode
     }
-    this.length++
-
-    return this
-  }
-
-  // add a value at the head of the linked list
-  prepend(value) {
-    const newNode = new Node(value)
-    newNode.next = this.head
-    this.head = newNode
-
     this.length++
 
     return this
@@ -101,4 +90,31 @@ class SinglyLinkedList {
 
     return current
   }
+
+  // add a node a specific index
+  insert(index, value) {
+    if (index !== typeof number) return null
+    if (index >= this.length) {
+      this.push(value)
+      return this
+    }
+    if (index < 0) {
+      this.unshift(value)
+      return this
+    }
+
+    const newNode = new Node(value)
+
+    const previousNode = this.get(index - 1)
+    const leaderNode = previous.next
+
+    previousNode.next = newNode
+    newNode.next = leaderNode
+    this.length++
+
+    return this
+  }
+
+
+
 }
