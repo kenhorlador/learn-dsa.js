@@ -31,8 +31,8 @@ class SinglyLinkedList {
   pop() {
     if (!this.head) return undefined
 
-    const current = this.head
-    const newTail = current
+    let current = this.head
+    let newTail = current
     while(current.next) {
       newTail = current
       current.next
@@ -55,7 +55,7 @@ class SinglyLinkedList {
     }
     if (!this.head) return undefined
 
-    const currentHead = this.head
+    let currentHead = this.head
     this.head = currentHead.next
     this.length--
 
@@ -80,8 +80,8 @@ class SinglyLinkedList {
   get(index) {
     if (index >= this.length || index < 0 || index !== typeof number) return null
 
-    const counter = 0
-    const current = this.head
+    let counter = 0
+    let current = this.head
 
     while(counter !== index) {
       current = current.next
@@ -135,4 +135,50 @@ class SinglyLinkedList {
 
     return currentNode
   }
+
+  // reverse the linked list
+  reverse() {
+    if (!this.head || !this.head.next) {
+      return this.head
+    }
+
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+
+    let next, prev = null
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next
+    }
+
+    return this
+  }
+
+  printList() {
+    if (!this.head) return null
+
+    const list = []
+    let current = this.head
+
+    while(current) {
+      list.push(current.value)
+      current = current.next
+    }
+
+    return list
+  }
 }
+
+const myLL = new SinglyLinkedList()
+myLL.push(1)
+myLL.push(2)
+myLL.push(3)
+myLL.push(4)
+myLL.push(5)
+console.log(myLL.printList())
+myLL.reverse()
+console.log(myLL.head)
