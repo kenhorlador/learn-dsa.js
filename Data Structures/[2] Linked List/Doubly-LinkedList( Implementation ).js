@@ -61,7 +61,9 @@ class SinglyLinkedList {
     if (index === 0) {
       const follower = this.head
       this.head = follower.next
-      break
+      this.length--
+
+      return this
     }
     const follower = this._traverseToIndex(index - 1)
     const unwantedNode = follower.next
@@ -121,4 +123,5 @@ myList.append(2)
 myList.append(3)
 myList.append(4)
 myList.append(5)
-console.log(myList.printList())
+// console.log(myList.printList())
+console.log(myList.reverse().printList())
