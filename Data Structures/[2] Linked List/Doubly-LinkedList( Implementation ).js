@@ -22,6 +22,8 @@ class SinglyLinkedList {
     this.tail.next = newNode
     this.tail = newNode
     this.length++
+
+    return this
   }
 
   // Add items in the head of the linked list
@@ -30,6 +32,8 @@ class SinglyLinkedList {
     newNode.next = this.head
     this.head = newNode
     this.length++
+
+    return this
   }
 
   // Add items in between in between of nodes
@@ -47,6 +51,8 @@ class SinglyLinkedList {
     follower.next = newNode
     newNode.next = leader
     this.length++
+
+    return this
   }
 
   // remove item from the list
@@ -61,6 +67,8 @@ class SinglyLinkedList {
     const unwantedNode = follower.next
     follower.next = unwantedNode.next
     this.length--
+
+    return this
   }
 
   reverse() {
@@ -79,6 +87,20 @@ class SinglyLinkedList {
     }
     this.head.next = null
     this.head = first
+
+    return this
+  }
+
+  printList() {
+    const list = []
+    let current = this.head
+
+    while(current) {
+      list.push(current.value)
+      current = current.next
+    }
+
+    return list
   }
 
   // Traverse to a specidic index
@@ -97,3 +119,6 @@ class SinglyLinkedList {
 const myList = new SinglyLinkedList(1)
 myList.append(2)
 myList.append(3)
+myList.append(4)
+myList.append(5)
+console.log(myList.printList())
