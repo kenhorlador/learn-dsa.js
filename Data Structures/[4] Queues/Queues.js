@@ -46,6 +46,8 @@ class Queue {
       this.last = newNode
     }
     this.length++
+
+    return this
   }
 
   dequeue() {
@@ -56,5 +58,7 @@ class Queue {
     }
     this.first = this.first.next
     this.length--
+
+    return this
   }
 }
