@@ -38,3 +38,13 @@ Lists == Linear <br> Trees == Nonlinear
 - Artificial Intelligence
 - Folders in Operating Systems
 - Computer File Systems
+
+> Note that: There's a lot of varieties of trees.
+
+---
+
+### <strong>How Binary Search Trees Work</strong>
+
+- Every oarent node has at most <strong>two children</strong>.
+- Every node to the left of a parent node is <strong>always less than the parent</strong>.
+- Every node to the right of a parent node is <strong>always greater than the parent</strong>.
