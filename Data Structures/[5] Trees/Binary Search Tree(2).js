@@ -26,25 +26,23 @@ class BinarySearchTree {
     while(true) {
       if (value === current.value) return undefined
 
-      if (current.value < value) {
-        if (current.left === null) {
-          current.left = newNode
-
-          return this
-        }
-        current = current.left
-      } else {
+      if (value > current.value) {
         if (current.right === null) {
           current.right = newNode
 
           return this
         }
-
         current = current.right
+      } else {
+        if (current.left === null) {
+          current.left = newNode
+
+          return this
+        }
+
+        current = current.left
       }
-
     }
-
   }
 
 }
