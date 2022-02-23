@@ -52,6 +52,39 @@ class BinarySearchTree {
     }
   }
 
+  // search for a value in the bstree
+  search(value) {
+    // if there is no root node, return false
+    if (!this.root) {
+      return false
+    }
+
+    let found = false
+    let current = this.root
+
+    // iterate through the BSTree
+    while(current && !found) {
+
+      // if the newNode's value is greater than the curret node's value, set the current to current's right
+      if (value > current.value) current = current.right
+      // if the newNode's value is less than the curret node's value, set the current to current's left
+      else if (value < current.value) current = current.left
+      // else, or if the newNode's value is equal to the current node's value, set found  to true
+      else found = true
+
+    }
+    // the loop will run until the node is not null and found is false
+    // if found is true, then we stop iterating or if it encounters a null value in the children, loop will also terminate
+
+    // if not found, return false
+    if (!found) return false
+
+
+    // if found, return the current node
+    return current
+  }
+
+
 }
 
 const bstree = new BinarySearchTree()
