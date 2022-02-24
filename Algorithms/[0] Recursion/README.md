@@ -33,3 +33,7 @@ function recurse() {
 
 recurse()
 ```
+
+### Examples:
+
+1. <a href="./Factorial.js">Program to find the Factorial of a number</a>
