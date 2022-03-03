@@ -1,5 +1,6 @@
 // Implementation 1
 // Insertion sort is an algorithm that steps one through each element forward while also iterating backwards
+// It performs best if the array's elements are almost sorted
 function insertionSort1(array) {
 
   for (let i = 1; i < array.length; i++) {
