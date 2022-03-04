@@ -1,0 +1,24 @@
+{
+  "name": "learn-dsa",
+  "version": "1.0.0",
+  "description": "Data structures and algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenhorlador/learn-dsa.js.git"
+  },
+  "keywords": [
+    "data",
+    "structures",
+    "algorithms"
+  ],
+  "author": "Ken Horlador",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenhorlador/learn-dsa.js/issues"
+  },
+  "homepage": "https://github.com/kenhorlador/learn-dsa.js#readme"
+}
