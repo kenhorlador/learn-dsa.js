@@ -1,3 +1,7 @@
+// Merge sort is a sorting algorithm that utilizes divide and conquer
+// Runs in O(n * logn)
+
+// function that merges 2 arrays and returns one sorted array
 function merge(arr1, arr2) {
   // i and j are used as pointers to keep track of the elements to be added in the results
   let i = 0, j = 0
@@ -31,6 +35,8 @@ function merge(arr1, arr2) {
   return results
 }
 
+// recursive function that divides the array into small bits and
+// merge them back together using the merge function
 function mergeSort(arr) {
   if (arr.length <= 1) return arr
 
