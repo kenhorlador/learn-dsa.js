@@ -73,16 +73,23 @@ class BinarySearchTree {
 
 
   bfSearch() {
-
+    // queue - stores the node to be visited
+    // data - stores the node visited
+    // node = root node
     let queue = [],
         data = [],
         node = this.root
 
+    // push the root node to the queue
     queue.push(node)
 
+    // while there is a value in the queue, the loop will run
     while (queue.length) {
+      // remove the first node / the node visited
       node = queue.shift()
+      // push it in the data array to keep track of nodes visited
       data.push(node.value)
+      // check if there's a value in left/right, if there's at least one, push it in queue
       if (node.left) queue.push(node.left)
       if (node.right) queue.push(node.right)
     }
