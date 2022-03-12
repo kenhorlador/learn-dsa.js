@@ -89,6 +89,10 @@ class BinarySearchTree {
     return data
   }
 
+  // order
+  // preorder = [push node.value, check left, check right]
+  // post order = [check left, check right, push node.value]
+  // in order = [check left, push node.value, check right]
   dfSearchPreOrder() {
     let data = []
     let current = this.root
