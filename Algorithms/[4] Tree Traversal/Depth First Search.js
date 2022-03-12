@@ -105,6 +105,22 @@ class BinarySearchTree {
     return data
   }
 
+  dfSearchPostOrder() {
+    let data = []
+    let current = this.root
+
+    // traverses until the very bottom of the tree then
+    // goes back to the top then pushes the value of the node to the array
+    function traverse(node) {
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+      data.push(node.value)
+    }
+
+    traverse(current)
+
+    return data
+  }
 }
 
 const bstree = new BinarySearchTree()
