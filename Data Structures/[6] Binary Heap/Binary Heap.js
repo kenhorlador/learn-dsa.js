@@ -19,6 +19,59 @@ class MaxBinaryHeap {
     console.log(this.data)
   }
 
+  extractMax() {
+    const max = this.data[0]
+    const end = this.data.pop()
+
+    if (this.data.length > 0) {
+
+      this.data[0] = end
+      this._sinkDown()
+
+    }
+
+    return max
+  }
+
+  _sinkDown() {
+    const idx = 0
+    const length = this.data.length
+    const element = this.data[0]
+
+    while (true) {
+      let leftChildIdx = 2 * idx + 1
+      let rightChildIdx = 2 * idx + 2
+      let leftChild, rightChild
+      let swap = null
+
+      if (leftChildIdx < length) {
+        leftChild = this.data[leftChildIdx]
+
+        if (leftChild > element) {
+          swap = leftChildIdx
+        }
+      }
+
+      if (rightChildIdx < length) {
+        rightChild = this.data[rightChildIdx]
+
+        if ((swap === null && rightChild > element) ||
+            (swap !== null && rightChild > leftChild)) {
+
+          swap = rightChildIdx
+        }
+      }
+
+      if (swap === null) break
+
+      this.data[idx] = this.values[swap]
+      this.values[swap] = element
+
+      idx = swap
+    }
+
+  }
+
   // A function that pushes the value of in the heap
   _bubbleUp() {
     let index = this.data.length - 1
