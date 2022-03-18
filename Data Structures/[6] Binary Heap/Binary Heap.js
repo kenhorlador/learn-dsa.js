@@ -23,6 +23,9 @@ class MaxBinaryHeap {
     const max = this.data[0]
     const end = this.data.pop()
 
+    // only set the first value of the end when,
+    // length > 0
+    // case 1: without if check, when only one element is left, the value is not poppped
     if (this.data.length > 0) {
 
       this.data[0] = end
@@ -39,34 +42,51 @@ class MaxBinaryHeap {
     const element = this.data[0]
 
     while (true) {
-      let leftChildIdx = 2 * idx + 1
-      let rightChildIdx = 2 * idx + 2
+      let leftChildIdx = 2 * idx + 1 // index of the element's left child
+      let rightChildIdx = 2 * idx + 2 // index of the element's right child
+
+      // declare left and right child but don't include values
+      // because there is a possibility that its out of bounds
       let leftChild, rightChild
+
       let swap = null
 
+      // if the element's left child index is not out of bounds
       if (leftChildIdx < length) {
+        // set the value of leftChild
         leftChild = this.data[leftChildIdx]
 
+        // if leftChild's value is greater than the element,
+        // set swap's value to leftChild's index
         if (leftChild > element) {
           swap = leftChildIdx
         }
       }
 
+      // if the element's right child index is not out of bounds
       if (rightChildIdx < length) {
+        // set the value of rightChild
         rightChild = this.data[rightChildIdx]
 
+        // if leftChild's value is less than element, and right child's value is greater than element
+        // or
+        // swap has a value, and right child is greater than left child
         if ((swap === null && rightChild > element) ||
             (swap !== null && rightChild > leftChild)) {
 
+          // set swap to be right child
           swap = rightChildIdx
         }
       }
 
+      // if there's no swap, break out of the loop
       if (swap === null) break
 
+      // swap the values
       this.data[idx] = this.values[swap]
       this.values[swap] = element
 
+      // update the value of index to be the child's index
       idx = swap
     }
 
