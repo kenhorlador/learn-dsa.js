@@ -2,7 +2,7 @@
 // FIFO - First in, First out
 
 // There are only three methods to use
-// Push, peek, and pop
+// - enqueue, peek, and dequeue
 
 // In implementing queues, in the background it uses arrays or linked list
 // But the best way is to use Linked list since we're
@@ -36,7 +36,7 @@ class Queue {
   }
 
 
-  // adds a node in the queue
+  // adds a node at the back of the queue
   enqueue(value) {
     const newNode = new Node(value)
     if (!this.first) {
@@ -52,7 +52,7 @@ class Queue {
     return this
   }
 
-  // removes a node in the queue
+  // removes a node in front of the queue
   dequeue() {
     if (!this.first) return null
 
