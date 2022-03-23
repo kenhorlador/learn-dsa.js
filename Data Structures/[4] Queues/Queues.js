@@ -30,11 +30,13 @@ class Queue {
     this.length = 0
   }
 
+  // see the first value
   peek() {
     return this.first
   }
 
 
+  // adds a node in the queue
   enqueue(value) {
     const newNode = new Node(value)
     if (!this.first) {
@@ -50,6 +52,7 @@ class Queue {
     return this
   }
 
+  // removes a node in the queue
   dequeue() {
     if (!this.first) return null
 
