@@ -24,4 +24,13 @@ class Graph {
       v !== vertex1
     })
   }
+
+  removeVertex(vertex) {
+    while (this.adjacencyList[vertex].length) {
+      const adjacentVertex = this.adjacencyList[vertex].pop()
+      this.removeEdge(adjacentVertex, vertex)
+    }
+
+    delete this.adjacencyList[vertex]
+  }
 }
